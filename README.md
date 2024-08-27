@@ -1,5 +1,21 @@
 # McNBTReader
-Minecraft NBT reader 
+A lightweight library for reading, editing, and saving Minecraft NBT files.
 
-from mcnbt import nbt
-nbp.read_file("your_path")
+## Overview
+McNBTReader is a Python library designed to efficiently handle Minecraft's NBT (Named Binary Tag) files, including `.dat`, `.schematic`, and `.nbt` formats.
+
+## Important
+This library is optimized for Python 3.12. Using previous versions of Python may result in performance issues.
+
+## Features
+- **Read NBT Files**: Supports `.dat`, `.schematic`, and `.nbt` files.
+- **Edit NBT Files**: Currently under development.
+- **Save NBT Files**: Currently under development.
+
+## Usage
+```python
+import mcnbt.nbt
+
+tree = mcnbt.nbt.Nbt().read_file("your_file_path")
+print(tree.name)
+```
