@@ -19,3 +19,4 @@ import mcnbt.nbt
 tree = mcnbt.nbt.Nbt().read_file("your_file_path")
 print(tree.name)
 ```
+[LICENSE](LICENSE)
