@@ -10,5 +10,5 @@ class BuilderLong(BuilderBaseValue):
     def __init__(self, name: str):
         super().__init__(Long, name)
 
-    def inset_value(self, buffer: BytesIO):
+    def insert_value(self, buffer: BytesIO):
         self.tag_class.value = struct.unpack('>q', buffer.read(8))[0]

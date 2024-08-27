@@ -7,6 +7,6 @@ class BuilderBaseValue(BuilderBase):
     def __init__(self, class_addr: any, name: str):
         super().__init__(class_addr, name)
 
-    def inset_value(self, buffer: BytesIO):
+    def insert_value(self, buffer: BytesIO):
         raise NotImplemented('This method is abstract')
 

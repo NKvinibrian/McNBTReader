@@ -10,5 +10,5 @@ class BuilderByte(BuilderBaseValue):
     def __init__(self, name: str):
         super().__init__(Byte, name)
 
-    def inset_value(self, buffer: BytesIO):
+    def insert_value(self, buffer: BytesIO):
         self.tag_class.value = struct.unpack('>b', buffer.read(1))[0]

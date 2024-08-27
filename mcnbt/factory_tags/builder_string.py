@@ -10,6 +10,6 @@ class BuilderString(BuilderBaseValue):
     def __init__(self, name: str):
         super().__init__(String, name)
 
-    def inset_value(self, buffer: BytesIO):
+    def insert_value(self, buffer: BytesIO):
         string_len = struct.unpack('>h', buffer.read(2))[0]
         self.tag_class.value = struct.unpack(f'>{string_len}s', buffer.read(string_len))[0]

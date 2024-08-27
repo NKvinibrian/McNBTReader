@@ -13,5 +13,8 @@ class BuilderCompound(BuilderBaseParent):
     def info_of_parent_tag(self, buffer: BytesIO):
         return
 
-    def append(self, tag: BuilderBase):
+    def append(self, tag: BuilderBase, stack=None):
         self.tag_class.children[tag.name] = tag.tag_class
+
+    def append_buffer(self, buffer: BytesIO, stack: list=None):
+        stack.append(self)

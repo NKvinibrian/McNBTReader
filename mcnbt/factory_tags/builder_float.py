@@ -10,5 +10,5 @@ class BuilderFloat(BuilderBaseValue):
     def __init__(self, name: str):
         super().__init__(Float, name)
 
-    def inset_value(self, buffer: BytesIO):
+    def insert_value(self, buffer: BytesIO):
         self.tag_class.value = struct.unpack('>f', buffer.read(4))[0]

@@ -10,5 +10,5 @@ class BuilderShort(BuilderBaseValue):
     def __init__(self, name: str):
         super().__init__(Short, name)
 
-    def inset_value(self, buffer: BytesIO):
+    def insert_value(self, buffer: BytesIO):
         self.tag_class.value = struct.unpack('>h', buffer.read(2))[0]
