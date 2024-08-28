@@ -7,5 +7,3 @@ class Byte(TagBaseValue):
         super().__init__(name)
         self.tag_id = 1
         self.tag_name = 'TagByte'
-
-

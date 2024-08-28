@@ -8,5 +8,3 @@ class Compound(TagBaseParent):
         self.tag_id = 10
         self.tag_name = 'TagCompound'
         self.children = {}
-
-

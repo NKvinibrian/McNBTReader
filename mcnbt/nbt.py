@@ -18,8 +18,6 @@ from mcnbt.factory_tags.builder_long_array import BuilderLongArray
 from mcnbt.factory_tags.base_builder_parent import BuilderBaseParent
 from mcnbt.factory_tags.base_builder_value import BuilderBaseValue
 
-import struct
-
 
 tag_list = {
     1: BuilderByte,
@@ -39,18 +37,8 @@ tag_list = {
 
 class Nbt:
 
-    # @staticmethod
-    # def __read__block__(buffer: BytesIO):
-    #     tag_id = struct.unpack('>b', buffer.read(1))[0]
-    #     title = ''
-    #     if tag_id:
-    #         title_length = struct.unpack('>h', buffer.read(2))[0]
-    #         title = bytes.decode(struct.unpack(f'>{title_length}s', buffer.read(title_length))[0], 'utf-8')
-    #
-    #     return tag_id, title
-
-    # Todo: I don't even know what this code does anymore, but it works
-    def __build_tree(self, buffer: BytesIO):
+    @staticmethod
+    def __build_tree(buffer: BytesIO):
         initial_tag_id, initial_tag_title = BuilderBase.read__block(buffer)
         if initial_tag_id == 0:
             raise Exception('File initiate with end tag')
@@ -85,5 +73,7 @@ class Nbt:
         file = GzipFile(file_path, mode='rb')
         buffer = BytesIO(file.read())
         file.close()
-        tree = self.__build_tree(buffer)
-        return tree
+        return self.__build_tree(buffer)
+
+    def read_buffer(self, buffer: BytesIO):
+        return self.__build_tree(buffer)

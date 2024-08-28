@@ -1,7 +1,6 @@
 from mcnbt.factory_tags.base_builder_parent import BuilderBaseParent, BytesIO
-from mcnbt.factory_tags.tags.tag_long_array import LongArray
 from mcnbt.factory_tags.builder_long import BuilderLong
-import struct
+from mcnbt.factory_tags.tags.tag_long_array import LongArray
 
 
 class BuilderLongArray(BuilderBaseParent):

@@ -1,7 +1,4 @@
-from typing import Union
-
 from mcnbt.factory_tags.base_builder_parent import BuilderBaseParent, BytesIO
-from mcnbt.factory_tags.tags.base_tags.baseParent import TagBaseParent
 from mcnbt.factory_tags.tags.tag_byte_array import ByteArray
 
 

@@ -8,3 +8,6 @@ class TagBaseParent(TagBase):
         self.length = 0
         self.children_tag_id = None
         self.children = []
+
+    def __getitem__(self, item):
+        return self.children[item]
