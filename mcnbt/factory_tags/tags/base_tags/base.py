@@ -7,4 +7,4 @@ class TagBase:
         self.tag_id = None
 
     def __repr__(self):
-        return f'{self.tag_name} {self.name}'
+        return f'{self.name}'
