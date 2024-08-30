@@ -1,4 +1,4 @@
-from src.mcnbt import Nbt
+from src.mcnbt.nbt import Nbt
 import pytest
 
 files = [
