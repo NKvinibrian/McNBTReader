@@ -1,4 +1,4 @@
-from src.mcnbt.factory_tags.tags.base_tags.base import TagBase
+from mcnbt.factory_tags.tags.base_tags.base import TagBase
 
 
 class TagBaseValue(TagBase):

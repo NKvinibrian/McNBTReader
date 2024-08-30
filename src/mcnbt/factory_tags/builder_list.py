@@ -1,11 +1,11 @@
 from typing import Union
 
-from src.mcnbt.factory_tags.base_builder_parent import BuilderBaseParent
+from mcnbt.factory_tags.base_builder_parent import BuilderBaseParent
 from io import BytesIO
 import struct
 
-from src.mcnbt.factory_tags.tags.base_tags.baseParent import TagBaseParent
-from src.mcnbt.factory_tags.tags.tag_list import List
+from mcnbt.factory_tags.tags.base_tags.baseParent import TagBaseParent
+from mcnbt.factory_tags.tags.tag_list import List
 
 
 class BuilderList(BuilderBaseParent):

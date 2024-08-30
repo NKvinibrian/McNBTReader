@@ -1,8 +1,8 @@
-from src.mcnbt.factory_tags.base_builder_parent import BuilderBaseParent
+from mcnbt.factory_tags.base_builder_parent import BuilderBaseParent
 from io import BytesIO
 
-from src.mcnbt.factory_tags.base_builder import BuilderBase
-from src.mcnbt.factory_tags.tags.tag_compound import Compound
+from mcnbt.factory_tags.base_builder import BuilderBase
+from mcnbt.factory_tags.tags.tag_compound import Compound
 
 
 class BuilderCompound(BuilderBaseParent):

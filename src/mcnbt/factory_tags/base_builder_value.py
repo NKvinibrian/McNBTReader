@@ -1,4 +1,4 @@
-from src.mcnbt.factory_tags.base_builder import BuilderBase
+from mcnbt.factory_tags.base_builder import BuilderBase
 from io import BytesIO
 
 

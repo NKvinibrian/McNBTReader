@@ -1,8 +1,8 @@
-from src.mcnbt.factory_tags.base_builder_value import BuilderBaseValue
+from mcnbt.factory_tags.base_builder_value import BuilderBaseValue
 from io import BytesIO
 import struct
 
-from src.mcnbt.factory_tags.tags.tag_byte import Byte
+from mcnbt.factory_tags.tags.tag_byte import Byte
 
 
 class BuilderByte(BuilderBaseValue):

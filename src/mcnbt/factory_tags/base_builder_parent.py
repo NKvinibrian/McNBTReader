@@ -1,7 +1,7 @@
-from src.mcnbt.factory_tags.base_builder import BuilderBase
+from mcnbt.factory_tags.base_builder import BuilderBase
 from typing import Union
 from io import BytesIO
-from src.mcnbt.factory_tags.tags.base_tags.baseParent import TagBaseParent
+from mcnbt.factory_tags.tags.base_tags.baseParent import TagBaseParent
 import struct
 
 

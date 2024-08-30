@@ -1,6 +1,6 @@
-from src.mcnbt.factory_tags.base_builder_parent import BuilderBaseParent, BytesIO
-from src.mcnbt.factory_tags.tags.tag_int_array import IntArray
-from src.mcnbt.factory_tags.builder_int import BuilderInt
+from mcnbt.factory_tags.base_builder_parent import BuilderBaseParent, BytesIO
+from mcnbt.factory_tags.tags.tag_int_array import IntArray
+from mcnbt.factory_tags.builder_int import BuilderInt
 
 class BuilderIntArray(BuilderBaseParent):
 

@@ -1,4 +1,4 @@
-from src.mcnbt.factory_tags.tags.base_tags.baseValue import TagBaseValue
+from mcnbt.factory_tags.tags.base_tags.baseValue import TagBaseValue
 
 
 class Double(TagBaseValue):

@@ -1,4 +1,4 @@
-from src.mcnbt.factory_tags.tags.base_tags.baseParent import TagBaseParent
+from mcnbt.factory_tags.tags.base_tags.baseParent import TagBaseParent
 
 
 class List(TagBaseParent):

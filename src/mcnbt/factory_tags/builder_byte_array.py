@@ -1,5 +1,5 @@
-from src.mcnbt.factory_tags.base_builder_parent import BuilderBaseParent, BytesIO
-from src.mcnbt.factory_tags.tags.tag_byte_array import ByteArray
+from mcnbt.factory_tags.base_builder_parent import BuilderBaseParent, BytesIO
+from mcnbt.factory_tags.tags.tag_byte_array import ByteArray
 
 
 class BuilderArray(BuilderBaseParent):

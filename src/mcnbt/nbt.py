@@ -1,22 +1,22 @@
 from io import BytesIO
 from gzip import GzipFile
 
-from src.mcnbt.factory_tags.base_builder import BuilderBase
-from src.mcnbt.factory_tags.builder_byte import BuilderByte
-from src.mcnbt.factory_tags.builder_short import BuilderShort
-from src.mcnbt.factory_tags.builder_int import BuilderInt
-from src.mcnbt.factory_tags.builder_long import BuilderLong
-from src.mcnbt.factory_tags.builder_float import BuilderFloat
-from src.mcnbt.factory_tags.builder_double import BuilderDouble
-from src.mcnbt.factory_tags.builder_byte_array import BuilderArray
-from src.mcnbt.factory_tags.builder_string import BuilderString
-from src.mcnbt.factory_tags.builder_list import BuilderList
-from src.mcnbt.factory_tags.builder_compound import BuilderCompound
-from src.mcnbt.factory_tags.builder_int_array import BuilderIntArray
-from src.mcnbt.factory_tags.builder_long_array import BuilderLongArray
+from mcnbt.factory_tags.base_builder import BuilderBase
+from mcnbt.factory_tags.builder_byte import BuilderByte
+from mcnbt.factory_tags.builder_short import BuilderShort
+from mcnbt.factory_tags.builder_int import BuilderInt
+from mcnbt.factory_tags.builder_long import BuilderLong
+from mcnbt.factory_tags.builder_float import BuilderFloat
+from mcnbt.factory_tags.builder_double import BuilderDouble
+from mcnbt.factory_tags.builder_byte_array import BuilderArray
+from mcnbt.factory_tags.builder_string import BuilderString
+from mcnbt.factory_tags.builder_list import BuilderList
+from mcnbt.factory_tags.builder_compound import BuilderCompound
+from mcnbt.factory_tags.builder_int_array import BuilderIntArray
+from mcnbt.factory_tags.builder_long_array import BuilderLongArray
 
-from src.mcnbt.factory_tags.base_builder_parent import BuilderBaseParent
-from src.mcnbt.factory_tags.base_builder_value import BuilderBaseValue
+from mcnbt.factory_tags.base_builder_parent import BuilderBaseParent
+from mcnbt.factory_tags.base_builder_value import BuilderBaseValue
 
 
 tag_list = {
