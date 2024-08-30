@@ -13,10 +13,11 @@ This library is optimized for Python 3.12. Using previous versions of Python may
 - **Save NBT Files**: Currently under development.
 
 ## Usage
-```python
-import mcnbt.nbt
 
-tree = mcnbt.nbt.Nbt().read_file("your_file_path")
+```python
+import src.mcnbt.nbt
+
+tree = src.mcnbt.nbt.Nbt().read_file("your_file_path")
 print(tree.name)
 entity = tree['Schematic']['Entities'][0]['Pos']
 print(f'x: {entity[0]} y: {entity[1]} z: {entity[2]}')

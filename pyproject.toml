@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcnbt"
+version = "0.0.1"
+authors = [
+  { name="Vinicius Wiggers", email="vi_ni_wiggers@hotmail.com" },
+]
+description = "A lightweight library for reading, editing, and saving Minecraft NBT files."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/NKvinibrian/McNBTReader"
+Issues = "https://github.com/NKvinibrian/McNBTReader/issues"
