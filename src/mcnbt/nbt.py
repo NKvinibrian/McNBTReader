@@ -1,5 +1,6 @@
-from io import BytesIO
+from io import BytesIO, TextIOWrapper
 from gzip import GzipFile
+from typing import Union, BinaryIO
 
 from mcnbt.factory_tags.base_builder import BuilderBase
 from mcnbt.factory_tags.builder_byte import BuilderByte
@@ -38,7 +39,7 @@ tag_list = {
 class Nbt:
 
     @staticmethod
-    def __build_tree(buffer: BytesIO):
+    def __build_tree(buffer: Union[BytesIO, GzipFile, BinaryIO] ):
         initial_tag_id, initial_tag_title = BuilderBase.read__block(buffer)
         if initial_tag_id == 0:
             raise Exception('File initiate with end tag')
@@ -69,11 +70,63 @@ class Nbt:
                 current_parent.append(tag, parent_stack)
         return initial_tag.tag_class
 
-    def read_file(self, file_path: str):
+    def read_file(self, file_path: str, fast_mode: bool=True):
+        """
+        Reads an NBT file in GZIP format.
+
+        This function parses a GZIP-compressed NBT (Named Binary Tag) file and returns its contents as a tree structure.
+
+        :param file_path: str
+            The path to the GZIP-compressed NBT file.
+
+        :param fast_mode: bool, optional
+            If True, the function reads the file in fast mode, which uses more memory but provides quicker processing.
+            If False, the function uses a memory-efficient mode that may be slower.
+
+        :return: Tree
+            A tree structure representing the contents of the NBT file.
+        """
         file = GzipFile(file_path, mode='rb')
-        buffer = BytesIO(file.read())
-        file.close()
-        return self.__build_tree(buffer)
+        if fast_mode:
+            buffer = BytesIO(file.read())
+            file.close()
+            return self.__build_tree(buffer)
+        else:
+            return self.__build_tree(file)
 
     def read_buffer(self, buffer: BytesIO):
+        """
+        Reads a Buffer in GZIP-decompressed format.
+
+        This function parses a GZIP-decompressed NBT buffer file and returns its contents as a tree structure.
+
+        :param buffer: BytesIO
+
+        :return: Tree
+            A tree structure representing the contents of the NBT file.
+        """
         return self.__build_tree(buffer)
+
+    def read_unzip_file(self, file_path: str, fast_mode=True):
+        """
+        Reads an NBT file in decompressed format.
+
+        This function parses a file NBT (Named Binary Tag) file and returns its contents as a tree structure.
+
+        :param file_path: str
+            The path to the NBT file.
+
+        :param fast_mode: bool, optional
+            If True, the function reads the file in fast mode, which uses more memory but provides quicker processing.
+            If False, the function uses a memory-efficient mode that may be slower.
+
+        :return: Tree
+            A tree structure representing the contents of the NBT file.
+        """
+        file = open(file_path, mode='rb')
+        if fast_mode:
+            buffer = BytesIO(file.read())
+            file.close()
+            return self.__build_tree(buffer)
+        else:
+            return self.__build_tree(file)
