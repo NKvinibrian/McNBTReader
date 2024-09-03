@@ -1,4 +1,4 @@
-from io import BytesIO, TextIOWrapper
+from io import BytesIO
 from gzip import GzipFile
 from typing import Union, BinaryIO
 
@@ -37,6 +37,25 @@ tag_list = {
 
 
 class Nbt:
+
+    @staticmethod
+    def __serializer(tree: any):
+        if tree is None:
+            return None
+
+        if not hasattr(tree, "__iter__"):
+            raise Exception('Not group tree')
+
+        tree_stack = [tree]
+        parent_stack = [tree]
+        while parent_stack:
+            node = parent_stack.pop()
+            for tag in node.__iter__():
+                tree_stack.append(tag)
+                if hasattr(tag, "__iter__"):
+                    parent_stack.append(tag)
+
+        return tree_stack   # todo: I stop here, test code!!
 
     @staticmethod
     def __build_tree(buffer: Union[BytesIO, GzipFile, BinaryIO] ):
@@ -130,3 +149,6 @@ class Nbt:
             return self.__build_tree(buffer)
         else:
             return self.__build_tree(file)
+
+    def write_file(self, tree):
+        self.__serializer(tree)
